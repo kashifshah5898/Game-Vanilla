@@ -345,3 +345,13 @@ ul li:first-child {
   display: flex;
   justify-content: center;
 }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: end;
+}
