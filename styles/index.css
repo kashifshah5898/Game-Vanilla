@@ -196,7 +196,6 @@ footer {
   background-color: #002244;
   padding: 20px 0;
   border-radius: 10px;
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -248,4 +247,32 @@ ul li:first-child {
   ul li {
     margin-left: 0;
   }
+}
+
+.container {
+  position: relative;
+  max-width: 100%;
+}
+
+.landingImage {
+  width: 100%;
+  height: 40rem;
+  margin-top: 0.5%;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value (0.5) to change the opacity */
+}
+
+.card0SuBodyAboutUs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  top: 20rem;
 }
