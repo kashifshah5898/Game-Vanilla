@@ -1,5 +1,13 @@
+let currentUrl = window.location.href.split('/')
+currentUrl = currentUrl[currentUrl.length - 1]
 var hamBurger = document.getElementById('hamBurgerClick');
 var nav = document.getElementById('navB');
+
+let allGames = [
+    { id: '1', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: './assets/row-of-slot-machines.jpg' },
+    { id: '2', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city' },
+    { id: '3', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city auto theft' },
+]
 
 let isHamClicked = false
 
@@ -55,8 +63,6 @@ function createNavbarItem(text, href) {
     return listItem;
 }
 
-let currentUrl = window.location.href.split('/')
-currentUrl = currentUrl[currentUrl.length - 1]
 const getItemsInCart = () => {
     return localStorage.getItem("itemInCart")
 }
@@ -83,7 +89,46 @@ const addToCart = (id) => {
     var itemCountElement = document.getElementById("itemCount");
     itemCountElement.textContent = tempArr.length;
     localStorage.setItem("itemInCart", JSON.stringify(tempArr))
-    alert("Item is successfully added to cart")
+    alert("Game is successfully added to cart")
 }
 
 countItems();
+
+
+
+const showDataToPage = (gamesLength = allGames.length) => {
+    let showingData = document.getElementById("landing-page-card");
+    showingData.innerHTML = "";
+    let updatedHtmlData = ""
+
+    let tempElement = ""
+
+    for (let index = 0; index < gamesLength; index++) {
+        tempElement = `   <div class="card">
+        <img src="${allGames[index].picture}" alt="Product Image" />
+        <div class="card-content">
+          <h2 class="card-title">${allGames[index].title}</h2>
+          <p class="card-description">${allGames[index].description}</p>
+          <hr />
+          <div class="gameCardRow">
+            <span class="colorWhite font-size-15"> Price <span id="price">$${allGames[index].price}</span></span>
+            <button class="add-to-cart-button" onclick="addToCart('${allGames[index].id}')">Add to Cart</button>
+          </div>
+        </div>
+      </div>`
+
+        updatedHtmlData += tempElement;
+        tempElement = ""
+    }
+
+    showingData.innerHTML = updatedHtmlData
+
+}
+
+console.log("currentUrl: ", currentUrl);
+
+if (currentUrl === '') {
+    showDataToPage(3)
+} else {
+    showDataToPage()
+}
