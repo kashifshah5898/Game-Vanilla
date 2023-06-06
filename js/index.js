@@ -7,6 +7,12 @@ let allGames = [
     { id: '1', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: './assets/row-of-slot-machines.jpg' },
     { id: '2', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city' },
     { id: '3', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city auto theft' },
+    { id: '4', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city auto theft' },
+    { id: '5', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city auto theft' },
+    { id: '6', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city auto theft' },
+    { id: '7', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city auto theft' },
+    { id: '8', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city auto theft' },
+    { id: '9', title: 'GTA vice city', description: "lorem ipsum dolor sit allGames", price: 3.14, picture: 'https://source.unsplash.com/320x220/?gta vice city auto theft' },
 ]
 
 let isHamClicked = false
@@ -125,7 +131,6 @@ const showDataToPage = (gamesLength = allGames.length) => {
 
 }
 
-console.log("currentUrl: ", currentUrl);
 
 if (currentUrl === '') {
     showDataToPage(3)
