@@ -8,7 +8,25 @@
     <title>I-Games</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <header class="headerColor">
+      <nav id="navB" class="navbar">
+        <h4><a href="/">I-Games</a></h4>
+        <label for="navbar-toggle" id="hamBurgerClick" class="pointer navbar-hamburger"></label>
+        <div id="navbar"></div>
+        <ul class="navbar-menu">
+          <li class="navbar-item"><a class="navLinks" href="#">Home</a></li>
+          <li class="navbar-item"><a class="navLinks" href="#">Games</a></li>
+          <li class="navbar-item"><a class="navLinks" href="#">Contact Us</a></li>
+          <li class="navbar-item"><a class="navLinks" href="#">About Us</a></li>
+          <li class="navbar-item"><a class="navLinks" href="#">Sign In</a></li>
+          <li class="navbar-item"><a class="navLinks" href="#">Sign Up</a></li>
+          <div class="cart-container pointer">
+            <div class="cart-icon add-to-cart"></div>
+            <span id="itemCount" class="cart-badge itemsInCart"> 0 </span>
+          </div>
+        </ul>
+      </nav>
+    </header>
   </body>
   <script src="./js/index.js"></script>
 </html>

@@ -1,3 +1,172 @@
-body {
-  /* background-color: blue; */
+* {
+  font-family: "Golos Text", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.font1 {
+  font-family: "Golos Text", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.colorWhite {
+  color: #fff;
+}
+
+.backgroundWhite {
+  background-color: #fff;
+}
+
+.colorBlue {
+  color: #002c5a;
+}
+
+.backgroundBlue {
+  background-color: #002c5a;
+}
+
+.colorYellow {
+  color: #e6f986;
+}
+
+.backgroundYellow {
+  background-color: #e6f986;
+}
+
+.mt-4 {
+  margin-top: 4%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/*  nav bar */
+
+.headerColor {
+  background-color: whitesmoke;
+}
+
+#navbar {
+  display: none;
+  padding-bottom: 0px;
+}
+
+.navPicture {
+  height: 55px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.navbar-hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style-type: none;
+}
+
+.navbar-item {
+  margin-right: 25px;
+}
+
+.navLinks {
+  text-decoration: none;
+  color: #002c5a;
+}
+
+.navLinks :hover {
+  color: black !important;
+}
+
+.paddingBottom {
+  padding-bottom: 0rem;
+}
+
+.cart-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.cart-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../assets/cart3.svg"); /* Replace with your cart icon image path */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.add-to-cart {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .paddingBottom {
+    padding-bottom: 17rem;
+  }
+
+  #navbar {
+    display: block;
+    position: absolute;
+    margin-top: 20rem;
+  }
+  .navbar-hamburger {
+    display: block;
+    background: url("../assets/hamburger.png") no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+  }
+
+  .navbar-item {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .navbar-item a {
+    display: block;
+    padding: 10px;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e34;
+    width: 100%;
+  }
 }
