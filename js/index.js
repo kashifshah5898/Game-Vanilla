@@ -215,12 +215,76 @@ const signUpForm = (event) => {
 
 }
 
+const countOccurrences = (arr, item) => {
+
+    return arr.reduce(function (count, element) {
+        if (element === item) {
+            return count + 1;
+        }
+        return count;
+    }, 0);
+}
+
+const showItemsInCart = () => {
+    let showingData = document.getElementById("cartItemsClass");
+    let totalBalance = document.getElementById("totalBalance");
+    totalBalance.innerHTML = 0;
+    showingData.innerHTML = "";
+    let updatedHtmlData = ""
+
+
+    let tempElement = ""
+    let checkOutBalance = 0
+
+
+    let itemFromCart = getItemsInCart()
+
+    itemFromCart = JSON.parse(itemFromCart);
+
+    for (let item = 0; item < allGames.length; item++) {
+        if (itemFromCart.includes(allGames[item].id)) {
+            tempElement = `   <div class="card">
+                <img src="${allGames[item].picture}" alt="Product Image" />
+                <div class="card-content">
+                  <h2 class="card-title">${allGames[item].title}</h2>
+                  <p  class="card-description long-paragraph">${allGames[item].description}</p>
+                  <div class="flex-end">
+                  <button class="add-to-cart-button" onclick="routeToGameDetail('${allGames[item].id}')" >View Detail</button>
+                  </div>
+                  <hr />
+                  <div class="gameCardRow">
+                    <span class="colorWhite font-size-15"> Price <span id="price">$${allGames[item].price}</span></span>
+                    <span class="colorWhite font-size-15">${countOccurrences(itemFromCart, allGames[item].id)} items</span>
+                   </div>
+                </div>
+              </div>`
+            checkOutBalance += parseFloat(allGames[item].price) * parseFloat(countOccurrences(itemFromCart, allGames[item].id))
+            updatedHtmlData += tempElement;
+            tempElement = ""
+        }
+    }
+
+    totalBalance.innerHTML = checkOutBalance
+
+    showingData.innerHTML = updatedHtmlData ? updatedHtmlData : `<h1 class="center colorYellow">No Item Found </h1>`
+}
+
+const clearLocalStorage = () => {
+
+    localStorage.clear()
+    window.location.reload();
+
+}
+
+
 if (currentUrl === '' || currentUrl === 'index.html') {
     showDataToPage(3)
 } else if (currentUrl === "allGames.html") {
     showDataToPage()
 } else if (currentUrl.split("?")[0] == 'Game-Detail.html') {
     specificGame()
+} else if (currentUrl === "Check-Out.html") {
+    showItemsInCart()
 }
 
 
