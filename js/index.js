@@ -106,24 +106,18 @@ hamBurger.onclick = function () {
 
 }
 
-function createNavbarItem(text, href) {
-    var listItem = document.createElement('li');
-    listItem.className = 'navbar-item';
-
-    if (text === "Donate") {
-        listItem.className = 'navbar-item navDonate';
-
+const createNavbarItem = (text, href) => {
+    var listItem = $('<li>').addClass('navbar-item');
+    if (text === 'Donate') {
+        listItem.addClass('navbar-item navDonate');
     }
+    var link = $('<a>').addClass('navLinks').attr('href', href).text(text);
 
-    var link = document.createElement('a');
-    link.className = 'navLinks';
-    link.href = href;
-    link.textContent = text;
+    listItem[0].appendChild(link[0]); // Convert to DOM nodes and append
 
-    listItem.appendChild(link);
-
-    return listItem;
+    return listItem[0];
 }
+
 
 const getItemsInCart = () => {
     return localStorage.getItem("itemInCart")
@@ -241,45 +235,45 @@ const specificGame = () => {
 }
 
 const submitForm = (event) => {
+    event.preventDefault();
 
-    event.preventDefault()
-    let contactName = document.getElementById('contact-name').value
-    let contactEmail = document.getElementById('contact-email').value
-    let contactText = document.getElementById('contact-textarea').value
+    let contactName = $('#contact-name').val();
+    let contactEmail = $('#contact-email').val();
+    let contactText = $('#contact-textarea').val();
 
-    alert(`Thanks ${contactName} for contacting us. We will get back to you soon`)
-    document.getElementById('contact-name').value = ""
-    document.getElementById('contact-email').value = ""
-    document.getElementById('contact-textarea').value = ""
-}
+    alert(`Thanks ${contactName} for contacting us. We will get back to you soon`);
+
+    $('#contact-name').val('');
+    $('#contact-email').val('');
+    $('#contact-textarea').val('');
+};
+
 
 const inputForm = (event) => {
+    event.preventDefault();
 
-    event.preventDefault()
-    let contactName = document.getElementById('username').value
+    let contactName = $('#username').val();
 
-    alert(`${contactName} logging you in...`)
+    alert(`${contactName} logging you in...`);
     window.location.href = '/';
+};
 
-}
 
 const signUpForm = (event) => {
-    event.preventDefault()
-    let contactName = document.getElementById('username').value
-    alert(`${contactName}, Your Profile is created successfully`)
-    window.location.href = './login.html';
+    event.preventDefault();
 
-}
+    let contactName = $('#username').val();
+    alert(`${contactName}, Your Profile is created successfully`);
+    window.location.href = './login.html';
+};
+
 
 const countOccurrences = (arr, item) => {
+    return $.grep(arr, function (element) {
+        return element === item;
+    }).length;
+};
 
-    return arr.reduce(function (count, element) {
-        if (element === item) {
-            return count + 1;
-        }
-        return count;
-    }, 0);
-}
 
 const showItemsInCart = () => {
     let showingData = document.getElementById("cartItemsClass");
@@ -347,10 +341,6 @@ if (currentUrl === '' || currentUrl === 'index.html') {
 if (currentUrl !== 'Game-Detail.html') {
     // paraEllipsis()
 }
-
-
-
-
 
 // Function to search the array of objects
 const searchGames = () => {
