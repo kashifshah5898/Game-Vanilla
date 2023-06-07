@@ -197,6 +197,24 @@ const submitForm = (event) => {
     document.getElementById('contact-textarea').value = ""
 }
 
+const inputForm = (event) => {
+
+    event.preventDefault()
+    let contactName = document.getElementById('username').value
+
+    alert(`${contactName} logging you in...`)
+    window.location.href = '/';
+
+}
+
+const signUpForm = (event) => {
+    event.preventDefault()
+    let contactName = document.getElementById('username').value
+    alert(`${contactName}, Your Profile is created successfully`)
+    window.location.href = './login.html';
+
+}
+
 if (currentUrl === '' || currentUrl === 'index.html') {
     showDataToPage(3)
 } else if (currentUrl === "allGames.html") {

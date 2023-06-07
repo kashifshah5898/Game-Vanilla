@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
     <link rel="stylesheet" href="./styles/index.css" />
+    <title>I-Games</title>
   </head>
-
   <body>
     <header class="headerColor">
       <nav id="navB" class="navbar">
@@ -27,23 +27,47 @@
         </ul>
       </nav>
     </header>
-    <div class="contact-container">
-      <h1 class="contact-heading">Contact Us</h1>
-      <form onsubmit="submitForm(event)">
-        <input id="contact-name" type="text" name="name" placeholder="Your Name" required />
-        <input id="contact-email" type="email" name="email" placeholder="Your Email" required />
-        <textarea
-          id="contact-textarea"
-          name="message"
-          placeholder="Your Message"
-          required
-        ></textarea>
 
-        <div class="gameCardRow center">
-          <button type="submit" class="add-to-cart-button">Send Message</button>
+    <div class="login-container">
+      <h1 class="login-h1">Sign Up</h1>
+
+      <form onsubmit="signUpForm(event)">
+        <label class="login-label" for="username">Username:</label>
+        <input
+          class="login-input"
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          required
+        />
+
+        <label class="login-label" for="password">Password:</label>
+        <input
+          class="login-input"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+        />
+
+        <label class="login-label" for="nationality">Nationality:</label>
+        <input
+          class="login-input"
+          type="text"
+          id="nationality"
+          name="nationality"
+          placeholder="Enter your nationality"
+          required
+        />
+
+        <div class="center">
+          <button type="submit" class="add-to-cart-button">Sign Up</button>
         </div>
       </form>
     </div>
+
     <footer>
       <div class="container">
         <div class="footer-content colorYellow">
