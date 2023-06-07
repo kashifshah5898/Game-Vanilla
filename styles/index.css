@@ -322,6 +322,15 @@ ul li:first-child {
   cursor: pointer;
 }
 
+.add-to-cart-button:hover {
+  background-color: #e6f986;
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* CSS for responsive layout */
 @media (min-width: 768px) {
   .card-container {
@@ -354,4 +363,83 @@ ul li:first-child {
 .flex-end {
   display: flex;
   justify-content: end;
+}
+
+/*  */
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form input,
+form textarea {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form textarea {
+  height: 120px;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-heading {
+    margin-top: 20px;
+  }
+}
+
+/*  */
+
+.about-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-center {
+  text-align: center;
+}
+
+.about-p {
+  margin-bottom: 20px;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.team-member .info {
+  flex-grow: 1;
+}
+
+.team-member h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.team-member p {
+  margin-top: 10px;
+  font-size: 16px;
 }

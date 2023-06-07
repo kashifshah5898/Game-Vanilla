@@ -182,19 +182,20 @@ const specificGame = () => {
   </button>
 </div>`
 
-    // var img = document.getElementById('specificGamePicture');
-    // var specificGameTitle = document.getElementById('specificGameTitle');
-    // var specificGameDescription = document.getElementById('specificGameDescription');
-    // var specificGamePrice = document.getElementById('specificGamePrice');
-    // var specificGameAddTocart = document.getElementById('specificGameAddTocart');
-    // specificGameAddTocart.addEventListener('click', addToCart(myGame.id));
-    // img.src = myGame.picture
-    // specificGameTitle.innerText = myGame.title
-    // specificGameDescription.innerText = myGame.description
-    // specificGamePrice.innerText = myGame.price
-
 }
 
+const submitForm = (event) => {
+
+    event.preventDefault()
+    let contactName = document.getElementById('contact-name').value
+    let contactEmail = document.getElementById('contact-email').value
+    let contactText = document.getElementById('contact-textarea').value
+
+    alert(`Thanks ${contactName} for contacting us. We will get back to you soon`)
+    document.getElementById('contact-name').value = ""
+    document.getElementById('contact-email').value = ""
+    document.getElementById('contact-textarea').value = ""
+}
 
 if (currentUrl === '' || currentUrl === 'index.html') {
     showDataToPage(3)
