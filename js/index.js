@@ -158,14 +158,53 @@ const paraEllipsis = () => {
 
 }
 
+const specificGame = () => {
+    let gameId = currentUrl.split("=")[1]
+    let myGame = allGames.filter((item) => { return item.id == gameId })
+    myGame = myGame[0]
+
+    let specificGameAll = document.getElementById('specificGameAll');
+    specificGameAll.innerHTML = `   <img id="specificGamePicture" src="${myGame.picture}" alt="image-not-found" />
+<h4>Game Title: <span id="specificGameTitle">${myGame.title}</span></h4>
+<h4>Game Description:</h4>
+<p id="specificGameDescription">${myGame.description}</p>
+<h4>
+  Price:
+  <span id="specificGamePrice">${myGame.price}</span>
+</h4>
+<div class="center">
+  <button
+    id="specificGameAddTocart"
+    class="add-to-cart-button"
+    onclick="addToCart('${myGame.id}')"
+  >
+    Add to Cart
+  </button>
+</div>`
+
+    // var img = document.getElementById('specificGamePicture');
+    // var specificGameTitle = document.getElementById('specificGameTitle');
+    // var specificGameDescription = document.getElementById('specificGameDescription');
+    // var specificGamePrice = document.getElementById('specificGamePrice');
+    // var specificGameAddTocart = document.getElementById('specificGameAddTocart');
+    // specificGameAddTocart.addEventListener('click', addToCart(myGame.id));
+    // img.src = myGame.picture
+    // specificGameTitle.innerText = myGame.title
+    // specificGameDescription.innerText = myGame.description
+    // specificGamePrice.innerText = myGame.price
+
+}
 
 
-if (currentUrl === '') {
+if (currentUrl === '' || currentUrl === 'index.html') {
     showDataToPage(3)
-} else {
+} else if (currentUrl === "allGames.html") {
     showDataToPage()
+} else if (currentUrl.split("?")[0] == 'Game-Detail.html') {
+    specificGame()
 }
 
-if (currentUrl !== 'Game-Detail') {
+
+if (currentUrl !== 'Game-Detail.html') {
     paraEllipsis()
-}
+} 
