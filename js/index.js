@@ -10,63 +10,63 @@ let allGames = [
         title: 'GTA Vice City',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         price: 3.14,
-        picture: './assets/row-of-slot-machines.jpg'
+        picture: '../assets/vice city.jpg'
     },
     {
         id: '2',
         title: 'The Witcher 3: Wild Hunt',
         description: 'Embark on a dark and epic fantasy adventure.',
         price: 29.99,
-        picture: 'https://source.unsplash.com/320x220/?The Witcher 3: Wild Hunt'
+        picture: '../assets/the witcher.jpg'
     },
     {
         id: '3',
         title: 'Minecraft',
         description: 'Build, explore, and survive in an open-world block game.',
         price: 19.99,
-        picture: 'https://source.unsplash.com/320x220/?Minecraft'
+        picture: '../assets/minecraft.jpg'
     },
     {
         id: '4',
         title: 'Red Dead Redemption 2',
         description: 'Experience the wild west in this critically acclaimed action-adventure game.',
         price: 59.99,
-        picture: 'https://source.unsplash.com/320x220/?Red Dead Redemption 2'
+        picture: '../assets/red redemption.jpg'
     },
     {
         id: '5',
         title: 'Final Fantasy VII Remake',
         description: 'Relive the classic RPG with stunning visuals and updated gameplay.',
         price: 49.99,
-        picture: 'https://source.unsplash.com/320x220/?Final Fantasy VII Remake'
+        picture: '../assets/final fantacy.jpg'
     },
     {
         id: '6',
         title: 'The Legend of Zelda: Breath of the Wild',
         description: 'Embark on an adventure in the vast open world of Hyrule.',
         price: 59.99,
-        picture: 'https://source.unsplash.com/320x220/?The Legend of Zelda: Breath of the Wild'
+        picture: '../assets/the legend of zelda.jpg'
     },
     {
         id: '7',
         title: 'Call of Duty: Warzone',
         description: 'Engage in intense battle royale action with friends and foes.',
-        price: 0,
-        picture: 'https://source.unsplash.com/320x220/?Call of Duty: Warzone'
+        price: 10,
+        picture: '../assets/call of duty.jpg'
     },
     {
         id: '8',
         title: 'Overwatch',
         description: 'Join the team-based multiplayer shooter with diverse heroes.',
         price: 39.99,
-        picture: 'https://source.unsplash.com/320x220/?Overwatch'
+        picture: '../assets/Overwatch.jpg'
     },
     {
         id: '9',
         title: 'FIFA 22',
         description: 'Experience the thrill of virtual soccer with updated teams and gameplay.',
         price: 59.99,
-        picture: 'https://source.unsplash.com/320x220/?FIFA 22'
+        picture: '../assets/fifa 22.jpg'
     }
 ];
 
@@ -106,6 +106,8 @@ hamBurger.onclick = function () {
 
 }
 
+// J-query Functions
+
 const createNavbarItem = (text, href) => {
     var listItem = $('<li>').addClass('navbar-item');
     if (text === 'Donate') {
@@ -117,6 +119,48 @@ const createNavbarItem = (text, href) => {
 
     return listItem[0];
 }
+
+const submitForm = (event) => {
+    event.preventDefault();
+
+    let contactName = $('#contact-name').val();
+    let contactEmail = $('#contact-email').val();
+    let contactText = $('#contact-textarea').val();
+
+    alert(`Thanks ${contactName} for contacting us. We will get back to you soon`);
+
+    $('#contact-name').val('');
+    $('#contact-email').val('');
+    $('#contact-textarea').val('');
+};
+
+
+const inputForm = (event) => {
+    event.preventDefault();
+
+    let contactName = $('#username').val();
+
+    alert(`${contactName} logging you in...`);
+    window.location.href = '/';
+};
+
+
+const signUpForm = (event) => {
+    event.preventDefault();
+
+    let contactName = $('#username').val();
+    alert(`${contactName}, Your Profile is created successfully`);
+    window.location.href = './login.html';
+};
+
+
+const countOccurrences = (arr, item) => {
+    return $.grep(arr, function (element) {
+        return element === item;
+    }).length;
+};
+
+// Js Functions
 
 
 const getItemsInCart = () => {
@@ -234,45 +278,6 @@ const specificGame = () => {
 
 }
 
-const submitForm = (event) => {
-    event.preventDefault();
-
-    let contactName = $('#contact-name').val();
-    let contactEmail = $('#contact-email').val();
-    let contactText = $('#contact-textarea').val();
-
-    alert(`Thanks ${contactName} for contacting us. We will get back to you soon`);
-
-    $('#contact-name').val('');
-    $('#contact-email').val('');
-    $('#contact-textarea').val('');
-};
-
-
-const inputForm = (event) => {
-    event.preventDefault();
-
-    let contactName = $('#username').val();
-
-    alert(`${contactName} logging you in...`);
-    window.location.href = '/';
-};
-
-
-const signUpForm = (event) => {
-    event.preventDefault();
-
-    let contactName = $('#username').val();
-    alert(`${contactName}, Your Profile is created successfully`);
-    window.location.href = './login.html';
-};
-
-
-const countOccurrences = (arr, item) => {
-    return $.grep(arr, function (element) {
-        return element === item;
-    }).length;
-};
 
 
 const showItemsInCart = () => {

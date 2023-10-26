@@ -484,3 +484,8 @@ form textarea {
 .mt-2 {
   margin-top: 2%;
 }
+
+#specificGamePicture {
+  width: 30%;
+  height: 50%;
+}
